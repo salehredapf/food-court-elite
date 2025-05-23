@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Court - Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 1920px;
+      margin: auto;
+    }
+
+    .plan {
+      width: 100%;
+      display: block;
+    }
+
+    .logo {
+      position: absolute;
+      width: 317px;
+      height: 140px;
+      cursor: pointer;
+    }
+
+    #headburger-logo {
+      top: 24%;
+      left: 66.7%;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      overflow-y: auto;
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      margin: 20px auto;
+      display: block;
+      max-width: 90%;
+      border: 4px solid white;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+
+    .close {
+      position: fixed;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .close:hover {
+      color: #ff4444;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <img src="FOOD COURT.PNG.png" alt="Plan du Food Court" usemap="#image-map" class="plan">
+  <img src="logo-headburger.png" alt="Head Burger" id="headburger-logo" class="logo" onclick="openModal()">
+
+  <map name="image-map">
+    <area target="" alt="CHEESE" title="CHEESE" href="#" coords="282,302,1238,482" shape="rect">
+    <area target="" alt="O VERDE" title="O VERDE" href="#" coords="1762,415,1907,744" shape="rect">
+    <area target="" alt="GAMING ZONE" title="GAMING ZONE" href="#" coords="1764,892,1905,1223" shape="rect">
+    <area target="" alt="MAC CHEESE" title="MAC CHEESE" href="#" coords="1001,724,1331,868" shape="rect">
+    <area target="" alt="ROLL AND BOWL" title="ROLL AND BOWL" href="#" coords="1372,724,1701,869" shape="rect">
+    <area target="" alt="ABU AFIF" title="ABU AFIF" href="#" coords="494,723,822,868" shape="rect">
+    <area target="" alt="NAPPA" title="NAPPA" href="#" coords="494,894,822,1039" shape="rect">
+    <area target="" alt="COOKIE" title="COOKIE" href="#" coords="999,892,1330,1037" shape="rect">
+    <area target="" alt="TOCHA" title="TOCHA" href="#" coords="1372,896,1701,1039" shape="rect">
+    <area target="" alt="ARGUILE" title="ARGUILE" href="#" coords="102,1122,434,1267" shape="rect">
+    <area target="" alt="COIN GOURMAND" title="COIN GOURMAND" href="#" coords="492,1124,824,1269" shape="rect">
+    <area target="" alt="IN CONCEPT" title="IN CONCEPT" href="#" coords="1003,1126,1331,1265" shape="rect">
+    <area target="" alt="JAD" title="JAD" href="#" coords="1372,1124,1702,1267" shape="rect">
+  </map>
+</div>
+
+<div id="menuModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" src="menu-headburger-1.jpg">
+  <img class="modal-content" src="menu-headburger-2.jpg">
+  <img class="modal-content" src="menu-headburger-3.jpg">
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("menuModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("menuModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById("menuModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
